@@ -1,0 +1,1 @@
+aws ec2 get-password-data --instance-id i-0355d73ec9a7b2549 --priv-launch-key mykey
