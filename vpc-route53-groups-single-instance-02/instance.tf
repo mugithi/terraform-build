@@ -18,10 +18,13 @@ resource "aws_instance" "example" {
     delete_on_termination = true
 
   }
+
+
   tags {
     Name = "${var.AWS_INSTANCE_NAME}"
   }
 }
+
 
 resource "aws_key_pair" "mykey" {
   key_name = "mykey"
