@@ -1,13 +1,13 @@
-resource "aws_route53_zone" "isaack-io" {
+data "aws_route53_zone" "isaack-io" {
    name = "isaack.io"
 }
 
 resource "aws_route53_record" "server1-record" {
-   zone_id = "${aws_route53_zone.isaack-io.zone_id}"
+   zone_id = "${data.aws_route53_zone.isaack-io.zone_id}"
    name = "${var.AWS_INSTANCE_NAME}.isaack.io"
-   type = "CNAME"
+   type = "A"
    ttl = "300"
-   records = ["${aws_instance.example.public_dns}"]
+   records = ["${aws_instance.example.public_ip}"]
 }
 /*resource "aws_route53_record" "www-record" {
    zone_id = "${aws_route53_zone.isaack-io.zone_id}"

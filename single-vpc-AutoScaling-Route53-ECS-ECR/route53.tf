@@ -1,9 +1,9 @@
-resource "aws_route53_zone" "isaack-io" {
+data "aws_route53_zone" "isaack-io" {
    name = "isaack.io"
 }
 
 resource "aws_route53_record" "server1-record" {
-   zone_id = "${aws_route53_zone.isaack-io.zone_id}"
+   zone_id = "${data.aws_route53_zone.isaack-io.zone_id}"
    name = "${var.AWS-AUTO-SCALING-NAME}.isaack.io"
    type = "CNAME"
    ttl = "300"
