@@ -6,7 +6,7 @@ resource "aws_instance" "example" {
   subnet_id = "${aws_subnet.terraform-public-1.id}"
 
   # the security group
-  vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
+  vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}","${aws_security_group.allow-http.id}"]
 
   # the public SSH key
   key_name = "${aws_key_pair.mykey.key_name}"
@@ -40,8 +40,23 @@ resource "aws_ebs_volume" "ebs-volume-02" {
   }
 }
 
-resource "aws_volume_attachment" "ebs-volume-02-attachment" {
-  device_name = "/dev/xvdh"
-  volume_id ="${aws_ebs_volume.ebs-volume-02.id}"
-  instance_id="${aws_instance.example.id}"
-}
+#resource "aws_volume_attachment" "ebs-volume-02-attachment" {
+#  device_name = "/dev/xvdh"
+#  volume_id ="${aws_ebs_volume.ebs-volume-02.id}"
+#  instance_id="${aws_instance.example.id}"
+#}
+#resource "aws_ebs_volume" "ebs-volume-03" {
+#  availability_zone = "us-east-1a"
+#  size = 20
+#  type = "gp2"
+#  tags {
+#    Name = "ebs-volume-03"
+#  }
+#}
+#
+#resource "aws_volume_attachment" "ebs-volume-03-attachment" {
+#  device_name = "/dev/xvdi"
+#  volume_id ="${aws_ebs_volume.ebs-volume-03.id}"
+#  instance_id="${aws_instance.example.id}"
+#}
+
