@@ -10,4 +10,4 @@
 */ansible-install-docker.retry
 */vars.tf
 */terraform.tfstate.lock.info
-~
+*/admin_password
