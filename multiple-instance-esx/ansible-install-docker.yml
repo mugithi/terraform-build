@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+   - name: Download Docker installer File
+     # This will install UCP support docker which at the time of writing this was 1.13
+     get_url: url=https://packages.docker.com/1.13/install.sh dest=/tmp/docker.sh
+    # get_url: url=https://get.docker.com/ dest=/tmp/docker.sh
+   - name: change permissions on File
+     file: path=/tmp/docker.sh state=touch mode="a+x"
+   - name: Install docker
+     shell: bash +x /tmp/docker.sh
+   - name: start docker daemon
+     service: name=docker state=running

@@ -1,0 +1,13 @@
+
+
+[docker-swarm-terraform-03]
+[docker-swarm-terraform-05]
+172.17.101.117 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'172.17.101.118 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[docker-swarm-terraform-02]
+172.17.101.115 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[docker-swarm-terraform-06]
+172.17.101.116 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[docker-swarm-terraform-01]
+172.17.101.119 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[docker-swarm-terraform-04]
+172.17.101.120 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
