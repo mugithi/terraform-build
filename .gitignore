@@ -12,3 +12,4 @@
 */vars.tf
 */terraform.tfstate.lock.info
 */admin_password
+*/.terraform.tfstate.lock.info
